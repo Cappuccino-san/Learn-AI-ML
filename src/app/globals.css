@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --color-canvas: 250 250 250;
+    --color-surface: 255 255 255;
+    --color-subtle: 244 244 245;
+    --color-border: 228 228 231;
+    --color-border-strong: 212 212 216;
+    --color-ink-primary: 17 24 39;
+    --color-ink-secondary: 75 85 99;
+    --color-ink-muted: 113 113 122;
+    --color-accent: 24 24 27;
+    --color-accent-ink: 255 255 255;
+    --color-accent-soft: 244 244 245;
+    --color-accent-blue: 37 99 235;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --color-canvas: 9 9 11;
+    --color-surface: 17 17 20;
+    --color-subtle: 24 24 29;
+    --color-border: 39 39 42;
+    --color-border-strong: 63 63 70;
+    --color-ink-primary: 244 244 245;
+    --color-ink-secondary: 161 161 170;
+    --color-ink-muted: 132 132 142;
+    --color-accent: 244 244 245;
+    --color-accent-ink: 9 9 11;
+    --color-accent-soft: 24 24 29;
+    --color-accent-blue: 96 165 250;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--color-canvas));
+    color: rgb(var(--color-ink-primary));
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-border));
+    color: rgb(var(--color-ink-primary));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-accent));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+.dark .bg-accent.text-white {
+  color: rgb(var(--color-accent-ink));
+}
+
+/* Subtle Linear / Apple Notes style scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border-strong));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-ink-muted));
+}
